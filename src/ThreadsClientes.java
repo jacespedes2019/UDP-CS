@@ -1,4 +1,3 @@
-package ClienteServidorUDP;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -12,9 +11,9 @@ public class ThreadsClientes {
 		int archivo= Integer.parseInt(lector.readLine());
 		String arch="";
 		if(archivo==1){
-			arch="../100MB.txt";
+			arch="100MB.txt";
 		}
-		else arch="../250MB.txt";
+		else arch="250MB.txt";
 		ClienteUDP[] clientes=new ClienteUDP[cantClientes];
 
 		for(int i=0; i<cantClientes;i++){
