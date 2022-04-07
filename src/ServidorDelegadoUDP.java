@@ -49,7 +49,7 @@ public class ServidorDelegadoUDP extends Thread{
 		if(siDescarga.contains("i")){
 			System.out.println("Entro");			
 			try {
-				InetAddress direccion = InetAddress.getByName("235.1.1.1");
+				InetAddress direccion = InetAddress.getByName("224.0.0.1");
 				int puerto = 4000;
 				System.out.println("Para los clientes el puerto es: "+ puerto+" y la ip multicast es: "+direccion);
 				File file = new File(archivo);

@@ -36,7 +36,7 @@ public class ClienteUDP extends Thread{
 	 */
 	byte[] buffer = new byte[50000]; // 64kb es el máximo de tamano de la fragmentación
 	//Host del servidor
-	public final String HOST = "192.168.157.128";
+	public final String HOST = "192.168.253.128";
 	
 	public ArrayList<DatagramPacket> listPacket=new ArrayList<DatagramPacket>();
 
@@ -55,8 +55,8 @@ public class ClienteUDP extends Thread{
 			File archivoLog = new File("logs/" + fechaHoy + "-log.txt");
 			escritorParaLOG = new BufferedWriter(new FileWriter(archivoLog));
 			//Obtengo la localizacion del servidor
-			//InetAddress direccionServidor = InetAddress.getByName(HOST);
-			InetAddress direccionServidor = InetAddress.getLocalHost();
+			InetAddress direccionServidor = InetAddress.getByName(HOST);
+			//InetAddress direccionServidor = InetAddress.getLocalHost();
 
 			//Creo el socket de UDP
 			DatagramSocket socketUDPClient = new DatagramSocket();
@@ -76,7 +76,7 @@ public class ClienteUDP extends Thread{
 			
 			if(descarga.equals("Si")){
 				MulticastSocket socket = new MulticastSocket(4000);
-				socket.joinGroup(InetAddress.getByName("235.1.1.1"));
+				socket.joinGroup(InetAddress.getByName("224.0.0.1"));
 				String pathDescarga="";
 				pathDescarga="ArchivosRecibidos/Cliente"+id+"-Prueba-"+total+".txt";
 				FileOutputStream fos = new FileOutputStream(pathDescarga);
