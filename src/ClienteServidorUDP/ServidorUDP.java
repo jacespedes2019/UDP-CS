@@ -6,6 +6,7 @@ import java.net.DatagramSocket;
 import java.util.Scanner;
 
 public class ServidorUDP {
+	static ServidorDelegadoUDP thread=null;
 	public static void main(String[] args) throws IOException {
 		Scanner lector = new Scanner(System.in);
 		//puerto de nuestro servidor
@@ -23,7 +24,7 @@ public class ServidorUDP {
 			System.out.println("Solicitud mandada por el cliente: "+ numeroServidor);
 			numeroServidor++;		
 		}
-	    ServidorDelegadoUDP thread= new ServidorDelegadoUDP(paquete, numeroServidor);
+	    thread= new ServidorDelegadoUDP(paquete, numeroServidor);
 		thread.start();
 	    socketServUDP.close(); 
 
