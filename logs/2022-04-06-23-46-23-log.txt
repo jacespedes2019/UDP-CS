@@ -1,5 +1,0 @@
-El cliente 1 recibio el archivo: Cliente1-Prueba-5.txt de tamano: 85050000 bytes, con una entrega exitosa y con un tiempo de transferencia de: 7147 milisegundos
-El cliente 3 recibio el archivo: Cliente3-Prueba-5.txt de tamano: 85050000 bytes, con una entrega exitosa y con un tiempo de transferencia de: 7149 milisegundos
-El cliente 0 recibio el archivo: Cliente0-Prueba-5.txt de tamano: 85050000 bytes, con una entrega exitosa y con un tiempo de transferencia de: 7155 milisegundos
-El cliente 2 recibio el archivo: Cliente2-Prueba-5.txt de tamano: 85050000 bytes, con una entrega exitosa y con un tiempo de transferencia de: 7155 milisegundos
-El cliente 4 recibio el archivo: Cliente4-Prueba-5.txt de tamano: 85050000 bytes, con una entrega exitosa y con un tiempo de transferencia de: 7162 milisegundos
