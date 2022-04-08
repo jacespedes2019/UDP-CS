@@ -84,8 +84,9 @@ public class ClienteUDP extends Thread{
 				//Creo un datagrama
 				int loQueVaDelArch=0;
 				long inicioEnvio = 0;
-				System.out.println(buffer.length);
+				System.out.println(buffer.length);			
 				while(loQueVaDelArch<=totalArch){
+					System.out.println("total"+totalArch);
 					DatagramPacket archivoRecibido = new DatagramPacket(buffer, buffer.length);				
 					socket.receive(archivoRecibido);
 					if(loQueVaDelArch==0){
