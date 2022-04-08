@@ -130,20 +130,36 @@ public class ClienteUDP extends Thread{
 	 */
 	public int totArch(){
 		int totalArch=0;
-		if(total<8){
+		if(total<3){
 			if(arch.contains("100MB.txt")){
-				totalArch=90000000;
+				totalArch=95000000;
 			}
 			else {
-				totalArch=250000000;
+				totalArch=230000000;
+			}
+		}
+		else if(total<6){
+			if(arch.contains("100MB.txt")){
+				totalArch=75000000;
+			}
+			else {
+				totalArch=176000000;
+			}
+		}
+		else if(total<9){
+			if(arch.contains("100MB.txt")){
+				totalArch=70000000;
+			}
+			else {
+				totalArch=155000000;
 			}
 		}
 		else {
 			if(arch.contains("100MB.txt")){
-				totalArch=80000000;
+				totalArch=85000000;
 			}
 			else {
-				totalArch=230000000;
+				totalArch=180000000;
 			}
 		}
 		return totalArch;
