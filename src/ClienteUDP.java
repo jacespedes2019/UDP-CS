@@ -135,7 +135,7 @@ public class ClienteUDP extends Thread{
 				totalArch=104000000;
 			}
 			else {
-				totalArch=261000000;
+				totalArch=260000000;
 			}
 		}
 		else if(total<8){
