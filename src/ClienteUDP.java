@@ -49,8 +49,8 @@ public class ClienteUDP extends Thread{
 
 	public void run() {
 		System.out.println(descarga);
-		//int totalArch=totArch();
-		int totalArch=104800000;
+		int totalArch=totArch();
+		//int totalArch=500000000;
 		try {
 			String fechaHoy = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss").format(Calendar.getInstance().getTime());
 			File archivoLog = new File("../logs/" + fechaHoy + "-log.txt");
