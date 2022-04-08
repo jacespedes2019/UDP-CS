@@ -5,7 +5,7 @@ import java.io.InputStreamReader;
 public class ThreadsClientes {
 	public static void main(String args[]) throws IOException {
 		BufferedReader lector = new BufferedReader (new InputStreamReader (System.in));
-		System.out.println("Hola, cuántos clientes desea poner (Poner los mismos del servidor): ");
+		System.out.println("Hola, cuantos clientes desea poner (Poner los mismos del servidor): ");
 		int cantClientes= Integer.parseInt(lector.readLine());
 		System.out.println("Que archivo desea escoger: 1. 100MB 2. 250MB");
 		int archivo= Integer.parseInt(lector.readLine());
