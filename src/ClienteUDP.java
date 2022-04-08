@@ -78,7 +78,7 @@ public class ClienteUDP extends Thread{
 				MulticastSocket socket = new MulticastSocket(4000);
 				socket.joinGroup(InetAddress.getByName("224.0.0.1"));
 				String pathDescarga="";
-				pathDescarga="ArchivosRecibidos/Cliente"+id+"-Prueba-"+total+".txt";
+				pathDescarga="../ArchivosRecibidos/Cliente"+id+"-Prueba-"+total+".txt";
 				FileOutputStream fos = new FileOutputStream(pathDescarga);
 				BufferedOutputStream bos = new BufferedOutputStream(fos);
 				//Creo un datagrama
