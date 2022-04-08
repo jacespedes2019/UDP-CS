@@ -156,10 +156,10 @@ public class ClienteUDP extends Thread{
 		}
 		else {
 			if(arch.contains("100MB.txt")){
-				totalArch=50000000;
+				totalArch=45000000;
 			}
 			else {
-				totalArch=120000000;
+				totalArch=100000000;
 			}
 		}
 		return totalArch;
