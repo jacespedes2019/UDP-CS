@@ -6,8 +6,6 @@ import java.util.Scanner;
 public class ServidorUDP {
 	public static void main(String[] args) throws IOException {
 		Scanner lector = new Scanner(System.in);
-		//puerto de nuestro servidor
-		final int PUERTO = 5000;
 		System.out.println("Digite el numero de clientes que desea que se conecten en simultaneo: ");
 		int cantClientes = lector.nextInt();
 		System.out.println("Bienvenido al servidor");

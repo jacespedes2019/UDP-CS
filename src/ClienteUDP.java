@@ -61,7 +61,7 @@ public class ClienteUDP extends Thread{
 			//Creo el socket de UDP
 			DatagramSocket socketUDPClient = new DatagramSocket();
 
-			System.out.println("Para cliente: "+id+". El puerto es: "+ socketUDPClient.getInetAddress()+" y la ip es: "+socketUDPClient.getLocalPort());
+			System.out.println("Para cliente: "+id+". El puerto es: "+ socketUDPClient.getLocalPort());
 			String mensaje=total+","+arch +","+descarga;
 			//Convierto el mensaje a bytes
 			byte[] byteMs = mensaje.getBytes();
