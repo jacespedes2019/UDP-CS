@@ -28,13 +28,13 @@ public class ClienteUDP extends Thread{
 	 */
 	public String descarga;
 	/**
-	 * Puerto en el que está el servidor
+	 * Puerto en el que esta el servidor
 	 */
 	public final int SERV_PORT= 5000;
 	/**
 	 * Buffer que se usa para mandar los mensajes
 	 */
-	byte[] buffer = new byte[50000]; // 64kb es el máximo de tamano de la fragmentación
+	byte[] buffer = new byte[50000]; // 64kb es el maximo de tamano de la fragmentacion
 	//Host del servidor
 	public final String HOST = "192.168.253.128";
 	
@@ -124,8 +124,8 @@ public class ClienteUDP extends Thread{
 		}
 	}
 	/**
-	 * Debido a la pérdida de paquetes promedio con la cantidad de clientes simultáneos se decidieron 
-	 * los siguientes límites para que el cliente deje de recibir y poder tomar los tiempos.
+	 * Debido a la perdida de paquetes promedio con la cantidad de clientes simultaneos se decidieron 
+	 * los siguientes lamites para que el cliente deje de recibir y poder tomar los tiempos.
 	 * @return
 	 */
 	public int totArch(){
