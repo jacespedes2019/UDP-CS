@@ -52,7 +52,7 @@ public class ClienteUDP extends Thread{
 		int totalArch=totArch();
 		try {
 			String fechaHoy = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss").format(Calendar.getInstance().getTime());
-			File archivoLog = new File("logs/" + fechaHoy + "-log.txt");
+			File archivoLog = new File("../logs/" + fechaHoy + "-log.txt");
 			escritorParaLOG = new BufferedWriter(new FileWriter(archivoLog));
 			//Obtengo la localizacion del servidor
 			InetAddress direccionServidor = InetAddress.getByName(HOST);
