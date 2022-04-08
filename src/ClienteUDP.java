@@ -49,7 +49,8 @@ public class ClienteUDP extends Thread{
 
 	public void run() {
 		System.out.println(descarga);
-		int totalArch=totArch();
+		//int totalArch=totArch();
+		int totalArch=104800000;
 		try {
 			String fechaHoy = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss").format(Calendar.getInstance().getTime());
 			File archivoLog = new File("../logs/" + fechaHoy + "-log.txt");
@@ -83,8 +84,7 @@ public class ClienteUDP extends Thread{
 				BufferedOutputStream bos = new BufferedOutputStream(fos);
 				//Creo un datagrama
 				int loQueVaDelArch=0;
-				long inicioEnvio = 0;
-				System.out.println(buffer.length);			
+				long inicioEnvio = 0;		
 				while(loQueVaDelArch<=totalArch){
 					DatagramPacket archivoRecibido = new DatagramPacket(buffer, buffer.length);				
 					socket.receive(archivoRecibido);
