@@ -36,7 +36,7 @@ public class ClienteUDP extends Thread{
 	 */
 	byte[] buffer = new byte[50000]; // 64kb es el maximo de tamano de la fragmentacion
 	//Host del servidor
-	public final String HOST = "192.168.253.128";
+	public final String HOST = "192.168.253.132";
 	
 	public ArrayList<DatagramPacket> listPacket=new ArrayList<DatagramPacket>();
 
@@ -93,7 +93,7 @@ public class ClienteUDP extends Thread{
 					}
 					listPacket.add(archivoRecibido);					
 					loQueVaDelArch+=archivoRecibido.getLength();
-					System.out.println("Se han descargado "+loQueVaDelArch+" bytes para el cliente "+ id);
+					//System.out.println("Se han descargado "+loQueVaDelArch+" bytes para el cliente "+ id);
 				}
 				for(int i=0;i<listPacket.size();i++){
 					bos.write(listPacket.get(i).getData(), 0, buffer.length);
