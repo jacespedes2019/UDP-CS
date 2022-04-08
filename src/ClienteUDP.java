@@ -86,7 +86,6 @@ public class ClienteUDP extends Thread{
 				long inicioEnvio = 0;
 				System.out.println(buffer.length);			
 				while(loQueVaDelArch<=totalArch){
-					System.out.println("total"+totalArch);
 					DatagramPacket archivoRecibido = new DatagramPacket(buffer, buffer.length);				
 					socket.receive(archivoRecibido);
 					if(loQueVaDelArch==0){
@@ -132,7 +131,7 @@ public class ClienteUDP extends Thread{
 	public int totArch(){
 		int totalArch=0;
 		if(total<3){
-			if(arch.equals("100MB.txt")){
+			if(arch.contains("100MB.txt")){
 				totalArch=98000000;
 			}
 			else {
@@ -140,7 +139,7 @@ public class ClienteUDP extends Thread{
 			}
 		}
 		else if(total<6){
-			if(arch.equals("100MB.txt")){
+			if(arch.contains("100MB.txt")){
 				totalArch=85000000;
 			}
 			else {
@@ -148,7 +147,7 @@ public class ClienteUDP extends Thread{
 			}
 		}
 		else if(total<9){
-			if(arch.equals("100MB.txt")){
+			if(arch.contains("100MB.txt")){
 				totalArch=75500000;
 			}
 			else {
@@ -156,7 +155,7 @@ public class ClienteUDP extends Thread{
 			}
 		}
 		else {
-			if(arch.equals("100MB.txt")){
+			if(arch.contains("100MB.txt")){
 				totalArch=69000000;
 			}
 			else {
