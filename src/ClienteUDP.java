@@ -18,7 +18,14 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 
+/**
+ * Clase que representa cada cliente como Thread
+ *
+ */
 public class ClienteUDP extends Thread{
+	/**
+	 * Atributos del cliente
+	 */
 	public int id;
 	public String arch;
 	public int total;
@@ -38,8 +45,18 @@ public class ClienteUDP extends Thread{
 	//Host del servidor
 	public final String HOST = "192.168.253.132";
 	
+	/**
+	 * ArrayList que almacena todos los DatagramPacket descargados
+	 */
 	public ArrayList<DatagramPacket> listPacket=new ArrayList<DatagramPacket>();
 
+	/**
+	 * Metodo constructor del cliente
+	 * @param id
+	 * @param arch archivo que desea
+	 * @param descarga
+	 * @param total de clientes
+	 */
 	public ClienteUDP(int id, String arch, String descarga, int total) {
 		this.id = id;
 		this.arch=arch;
@@ -47,6 +64,12 @@ public class ClienteUDP extends Thread{
 		this.total=total;
 	}
 
+	/**
+	 * Este metodo se ejecuta al correr el Thread, el cual se encarga de realizar las funciones que debe hacer el cliente
+	 * tal como enviar el mensaje para decidir el archivo mediante un socket UDP, realizar los logs de cada cliente y
+	 * ademas accede al archivo deseado en cual esta en una direccion multicast dada por el servidor, descarga los datagram packets
+	 * de los archivos, los guarda en un arraylist y finalmente los escribe en un archivo con un nombre dado.
+	 */
 	public void run() {
 		System.out.println(descarga);
 		int totalArch=totArch();
@@ -95,6 +118,7 @@ public class ClienteUDP extends Thread{
 					loQueVaDelArch+=archivoRecibido.getLength();
 					//System.out.println("Se han descargado "+loQueVaDelArch+" bytes para el cliente "+ id);
 				}
+				//Se escribe el archivo descargado
 				for(int i=0;i<listPacket.size();i++){
 					bos.write(listPacket.get(i).getData(), 0, buffer.length);
 				}
@@ -102,6 +126,7 @@ public class ClienteUDP extends Thread{
 				long finalDescarga = System.currentTimeMillis();
 				System.out.println("Archivo guardado para el cliente: "+id);
 				File fileDescargado = new File(pathDescarga);
+				//Se guarda el archivo de texto con los logs
 				escritorParaLOG.write("El cliente "+ id +" recibio el archivo: " 
 						+ fileDescargado.getName() + " de tamano: " + fileDescargado.length() + " bytes, " +
 						"con una entrega exitosa y con un tiempo de transferencia de: "
@@ -126,7 +151,7 @@ public class ClienteUDP extends Thread{
 	/**
 	 * Debido a la perdida de paquetes promedio con la cantidad de clientes simultaneos se decidieron 
 	 * los siguientes lamites para que el cliente deje de recibir y poder tomar los tiempos.
-	 * @return
+	 * @return total del archivo a recibir
 	 */
 	public int totArch(){
 		int totalArch=0;

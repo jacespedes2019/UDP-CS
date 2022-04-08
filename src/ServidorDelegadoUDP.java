@@ -15,6 +15,12 @@ import java.net.MulticastSocket;
 import java.net.Socket;
 import java.net.SocketException;
 
+/**
+ * Clase encargada de representar un servidor Multicast UDP el cual va a manejar la peticion del archivo deseado
+ * de cada uno de los clientes y posteriormente mediante Datagram Packets va a mandar el archivo hacia la direccion
+ * Multicast para que los clientes que solicitaron puedan descargarlo.
+ *
+ */
 public class ServidorDelegadoUDP extends Thread{
 	public int id;
 	public DatagramPacket mensaje;
@@ -35,6 +41,10 @@ public class ServidorDelegadoUDP extends Thread{
 		}
 		
 	}
+	/**
+	 * Metodo encargado de ejecutar el servidor, recibir el mensaje del paquete deseado, mandar el archivo mediante 
+	 * datagram packets a una direccion Multicast para permitir la posterior descarga del archivo, notificando el estado del cliente.
+	 */
 	public void run(){
 		System.out.println("Mensaje del cliente recibido");
 		//Convierto lo recibido
@@ -59,6 +69,7 @@ public class ServidorDelegadoUDP extends Thread{
 				int contador=0;
 				System.out.println(fis.read(buffer));
 				int totDat=0;
+				//Manda cada uno de los datagrampackets mediante la direccion multicast
 				while((contador = fis.read(buffer)) != -1){
 					DatagramPacket archivoAEnviar = new DatagramPacket(buffer,contador,direccion,puerto);
 				    MulsocketServUDP.send(archivoAEnviar);
@@ -67,10 +78,8 @@ public class ServidorDelegadoUDP extends Thread{
 				
 				System.out.println("Archivo de "+totDat+" datagramas enviado con exito para el Multicast");
 			} catch (FileNotFoundException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 

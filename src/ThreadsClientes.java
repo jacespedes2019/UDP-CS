@@ -2,6 +2,11 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+/**
+ * Clase encargada de recibir la cantidad de clientes y el tipo de paquete que se desea para asi ejecutar
+ * cada uno de los clientes como un Thread, mandandole los atributos por parametro.
+ *
+ */
 public class ThreadsClientes {
 	public static void main(String args[]) throws IOException {
 		BufferedReader lector = new BufferedReader (new InputStreamReader (System.in));
