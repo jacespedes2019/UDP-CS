@@ -43,7 +43,7 @@ public class ClienteUDP extends Thread{
 	 */
 	byte[] buffer = new byte[50000]; // 64kb es el maximo de tamano de la fragmentacion
 	//Host del servidor
-	public final String HOST = "192.168.30.143";
+	public final String HOST = "192.168.30.134";
 	
 	/**
 	 * ArrayList que almacena todos los DatagramPacket descargados
